@@ -24,7 +24,7 @@ const useGetAllLinks = () => {
     fetchData();
   }, []);
 
-  return { linkState, data };
+  return { linkState, data, fetchData };
 };
 
 export default useGetAllLinks;

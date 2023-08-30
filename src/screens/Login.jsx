@@ -6,6 +6,7 @@ import { useForm, Controller } from "react-hook-form";
 import { postLoginUser } from "../utils/api";
 import { AuthContext } from "../context/AuthContext";
 import { EvilIcons } from "@expo/vector-icons";
+import { ActivityIndicator, MD2Colors } from "react-native-paper";
 
 const Login = () => {
   const {
@@ -27,7 +28,7 @@ const Login = () => {
       });
       setLoginState("success");
       setJwt(user?.jwt);
-      console.log(user);
+      // console.log(user);
     } catch (error) {
       setLoginState("error");
       console.log(error);
@@ -93,7 +94,7 @@ const Login = () => {
           </Button>
         </View>
       ) : (
-        <EvilIcons name="spinner-3" size={24} color="black" style={{}} />
+        <ActivityIndicator animating={true} color={MD2Colors.red800} />
       )}
     </View>
   );
